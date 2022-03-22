@@ -16,7 +16,6 @@ const Country = (props: countryProps ) => {
     const showWeather = ( shouldShow: boolean )=>{
         setWeatherShow(shouldShow)
     }
-    // console.log(country, weather)
 
     useEffect(()=>{ // if data losed user will be taken to the home page
         if( country === null){
@@ -40,16 +39,20 @@ const Country = (props: countryProps ) => {
             </Box>
             
             { weatherShow ?  <div>
-                <img style={{borderRadius:'50%'}} src={weather?.weatherIcon} alt="weather icon" />
-                <p>Temperature: {weather?.temperature}</p>
-                <p>Wind Speed: {weather?.windSpeed}</p>
-                <p>Precip: {weather?.precip}</p>
+                <Box display='flex' flexDirection='row' justifyContent='center' justifyItems='center' alignItems='center' >
+                    <img width='90px' height='90px' style={{borderRadius:'50%'}} src={weather?.weatherIcon} alt="weather icon" />
+                    <Box sx={{ textAlign: 'left', marginLeft: '10px' }}>
+                        <p>Temperature: {weather?.temperature}</p>
+                        <p>Wind Speed: {weather?.windSpeed}</p>
+                        <p>Precip: {weather?.precip}</p>
+                    </Box>
+                </Box>
             </div> : 
             <Box sx={{ display: 'flex', justifyContent: 'center', p: 1, m: 1, bgcolor: 'background.paper', borderRadius: 1, height:'100%' }} >
                 <Button onClick={()=>{showWeather(true)}} disabled={false} variant="contained">Capital weather</Button>
             </Box> }
 
-            <Button >
+            <Button variant="outlined" >
                 <Link to='/' >Back Home</Link>
             </Button>
         </div>
