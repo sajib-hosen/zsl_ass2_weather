@@ -66,10 +66,10 @@ const Home = ( props: homeProps ) => {
     },[ country ])
   
     return (
-        <Container maxWidth="xl">
-            <Box sx={{ display: 'flex', justifyContent: 'center', p: 1, m: 1, bgcolor: 'background.paper', borderRadius: 1, height:'100%' }} >
+        <Container style={{ backgroundImage:'url(http://www.clipartsuggest.com/images/586/cartoon-world-map-simple-map-of-europe-Bt9VIH-clipart.jpeg)', backgroundSize:'cover', backgroundPosition:'center', backgroundAttachment: 'fixed', backgroundRepeat:'no-repeat'}} sx={{ height: '100%', padding: `19%`, display:"flex", justifyContent:'center', alignItems:"center"}} maxWidth="xl">
+            <Box display='flex' flexDirection='row' justifyContent='center' sx={{ width:"300px", p: 1, m: 1, bgcolor: 'background.paper', borderRadius: 1, height:'100%' }} >
               <TextField onChange={(e)=>{getData(e)}} id="outlined-basic" label="Enter country" variant="outlined"></TextField>
-              <Button onClick={handleSearch} disabled={!Boolean(searchData)} variant="contained">Search</Button>
+              <Button sx={{marginLeft:'7px'}} onClick={handleSearch} disabled={!Boolean(searchData)} variant="contained">Search</Button>
             </Box>
         </Container>
     );
