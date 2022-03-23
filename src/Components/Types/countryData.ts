@@ -1,6 +1,6 @@
 
 export type countryDataType = {
-    country: string,
+    country?: string,
     capital: string [],
     latlng: number [],
     population: number,
